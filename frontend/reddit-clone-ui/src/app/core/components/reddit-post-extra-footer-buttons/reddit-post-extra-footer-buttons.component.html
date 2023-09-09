@@ -1,0 +1,25 @@
+<mat-icon
+  class="extra-footer-buttons"
+  (click)="isOpen = !isOpen"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+>
+  more_horiz
+</mat-icon>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+  <ul class="extra-footer-buttons-overlay">
+    <li class="extra-footer-button" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon>volume_mute</mat-icon> Mute
+    </li>
+    <li class="extra-footer-button" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon>visibility_off</mat-icon> Hide
+    </li>
+    <li class="extra-footer-button" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon>flag</mat-icon> Report
+    </li>
+  </ul>
+</ng-template>

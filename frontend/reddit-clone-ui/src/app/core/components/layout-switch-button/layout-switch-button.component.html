@@ -1,0 +1,25 @@
+<div
+  class="card-layout-button"
+  (click)="isOpen = !isOpen"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+>
+  Card Layout
+</div>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+  <ul class="card-layout-overlay">
+    <li class="card-layout-sort" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon>view_agenda</mat-icon> Card
+    </li>
+    <li class="card-layout-sort" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon>menu</mat-icon> Classic
+    </li>
+    <li class="card-layout-sort" (click)="isOpen = !isOpen" matRipple>
+      <mat-icon> format_align_justify</mat-icon> Compact
+    </li>
+  </ul>
+</ng-template>

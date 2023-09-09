@@ -1,0 +1,37 @@
+.card-layout-overlay {
+  display: grid;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 125px;
+}
+
+.card-layout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  width: 125px;
+  background-color: white;
+  transition: 150ms ease-out;
+}
+
+.card-layout-button:hover {
+  filter: brightness(90%);
+}
+
+.card-layout-sort {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  transition: 150ms ease-out;
+  user-select: none;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.card-layout-sort:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 150ms ease-out;
+}

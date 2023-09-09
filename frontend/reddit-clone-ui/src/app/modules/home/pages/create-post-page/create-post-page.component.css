@@ -1,0 +1,32 @@
+.create-post-page-container {
+  display: grid;
+  padding: 10px 0;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+}
+
+.left-side {
+  width: 630px;
+  padding: 10px;
+  background-color: orange;
+}
+
+.create-post-options {
+  margin-top: 22px;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.quill-editor-text-area {
+  width: 100%;
+}
+
+.right-side {
+  width: 350px;
+}
+
+.side-panel {
+  height: auto;
+  padding: 10px;
+  background-color: orange;
+}

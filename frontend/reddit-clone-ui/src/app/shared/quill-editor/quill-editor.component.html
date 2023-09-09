@@ -1,0 +1,24 @@
+<quill-editor [(ngModel)]="quillText" [styles]="{ height: '200px' }" (onFocus)="focus($event)" (onBlur)="blur($event)">
+  <div quill-editor-toolbar>
+    <span class="ql-formats">
+      <button class="ql-bold" [matTooltip]="'Bold'" matTooltipShowDelay="1000"></button>
+      <button class="ql-italic" [matTooltip]="'Italic'" matTooltipShowDelay="1000"></button>
+      <button class="ql-link" [matTooltip]="'Link'" matTooltipShowDelay="1000"></button>
+      <button class="ql-strike" [matTooltip]="'Strikethrough'" matTooltipShowDelay="1000"></button>
+      <!-- Inline-code (Not a feature in quill) -->
+      <button class="ql-script" value="super" [matTooltip]="'Superscript'" matTooltipShowDelay="1000"></button>
+      <!-- Spoiler (Not a feature in quill) -->
+    </span>
+    <span class="ql-formats">
+      <button class="ql-header" value="1" [matTooltip]="'Heading'" matTooltipShowDelay="1000"></button>
+      <button class="ql-list" value="bullet" [matTooltip]="'Bulleted List'" matTooltipShowDelay="1000"></button>
+      <button class="ql-list" value="ordered" [matTooltip]="'Numbered List'" matTooltipShowDelay="1000"></button>
+      <button class="ql-blockquote" [matTooltip]="'Quote Block'" matTooltipShowDelay="1000"></button>
+      <button class="ql-code" [matTooltip]="'Inline Code'" matTooltipShowDelay="1000"></button>
+    </span>
+    <span class="ql-formats">
+      <!-- Table (Not a feature in quill) -->
+      <button class="ql-video"  [matTooltip]="'Add a video'" matTooltipShowDelay="1000"></button>
+    </span>
+  </div>
+</quill-editor>

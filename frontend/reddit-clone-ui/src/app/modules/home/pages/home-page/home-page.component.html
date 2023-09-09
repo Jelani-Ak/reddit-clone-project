@@ -1,0 +1,31 @@
+<div class="home-page-container">
+  <div class="left-side">
+    <div class="create-post">
+      <input class="create-post-input darken-hover" (click)="createPost('create-post')" type="text" placeholder="Create post" matRipple/>
+      <div class="create-post-icon from-computer darken-hover" (click)="createPost('create-from-computer')" matTooltip="From Computer" matRipple>
+        <mat-icon>computer</mat-icon>
+      </div>
+      <div class="create-post-icon from-url darken-hover" (click)="createPost('create-from-link')" matTooltip="From URL" matRipple>
+        <mat-icon>link</mat-icon>
+      </div>
+    </div>
+    
+    <div class="reddit-feed-sort">
+      <div class="sort-options">Sort Options</div>   
+    
+      <app-layout-switch-button class="layout-switch-button" matRipple></app-layout-switch-button>
+    </div>
+    
+    <div class="reddit-feed">
+      <div class="reddit-posts" *ngFor="let redditPost of redditPosts">
+        <app-reddit-post [reddit-post]="redditPost"></app-reddit-post>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-side">
+    <div class="side-panel">
+      <div>side-panel works!</div>
+    </div>
+  </div>
+</div>

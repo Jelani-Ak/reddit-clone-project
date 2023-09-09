@@ -1,0 +1,79 @@
+<div class="reddit-post">
+  <div class="reddit-post-left-side">
+    <div class="reddit-post-votes">
+      <div class="up-arrow arrows darken-hover" matRipple><mat-icon>arrow_upward</mat-icon></div>
+      <p class="reddit-post-like-count">{{ redditPost.likes }}</p>
+      <div class="down-arrow arrows darken-hover" matRipple><mat-icon>arrow_downward</mat-icon></div>
+    </div>
+  </div>
+
+  <div class="reddit-post-right-side">
+    <div class="reddit-post-details">
+      <small class="sub-reddit-name">r/{{ redditPost.subRedditName }}</small>
+      <small>•</small>
+      <small class="reddit-post-author">Posted by u/{{ redditPost.authorName }}</small>
+      <small class="date-of-creaion">{{ redditPost.dateOfCreation | date : 'medium' }}</small>
+    </div>
+    
+    <div class="reddit-post-title-and-flair">
+      <p class="reddit-post-title">{{ redditPost.title }}</p>
+      <p class="reddit-post-flair darken-hover" [style.backgroundColor]="redditPost.redditFlair.flairColour" matRipple>
+        {{ redditPost.redditFlair.flairName }}
+      </p>
+    </div>
+    
+    <div *ngIf="redditPost.media" class="reddit-post-media-container">
+      <div class="reddit-post-media-content">
+        <img
+          class="reddit-post-media-image set-media-dimensions"
+          *ngIf="isAcceptableImage(redditPost.media.mediaType) && imageLoaded"
+          src="{{ redditPost.media.mediaUrl }}"
+          onerror="this.style.display='none'"
+        />
+        
+        <video
+          loop
+          muted
+          controls
+          preload="auto"
+          class="reddit-post-media-video set-media-dimensions"
+          *ngIf="isAcceptableVideo(redditPost.media.mediaType) && videoLoaded"
+          src="{{ redditPost.media.mediaUrl }}"
+          onerror="this.style.display='none'"
+        ></video>
+      </div>
+    </div>
+
+    <p class="reddit-post-content">{{ redditPost.content }}</p>
+    
+    <div class="reddit-post-footer">
+      <div class="reddit-post-footer-buttons">
+        <div class="reddit-post-comments reddit-post-button darken-hover" matRipple>
+          <mat-icon> chat_bubble_outline</mat-icon>
+          <span class="reddit-post-number-and-text">
+            <small class="reddit-post-button-number">{{ redditPost.comments.length }}</small>
+            <small class="reddit-post-button-text" *ngIf="redditPost.comments.length != 1">Comments</small>
+            <small class="reddit-post-button-text" *ngIf="redditPost.comments.length == 1">Comment</small>
+          </span>
+        </div>
+
+        <div class="reddit-post-award reddit-post-button darken-hover" matRipple>
+          <mat-icon>card_giftcard</mat-icon>
+          <small class="reddit-post-button-text">Award</small>
+        </div>
+
+        <div class="reddit-post-share reddit-post-button darken-hover" matRipple>
+          <mat-icon>share</mat-icon>
+          <small class="reddit-post-button-text">Share</small>
+        </div>
+
+        <div class="reddit-post-save reddit-post-button darken-hover" matRipple>
+          <mat-icon>bookmark_border</mat-icon>
+          <small class="reddit-post-button-text">Save</small>
+        </div>
+
+        <app-reddit-post-extra-footer-buttons class="reddit-post-save darken-hover extra-buttons" matRipple></app-reddit-post-extra-footer-buttons>
+      </div>
+    </div>
+  </div>
+</div>
