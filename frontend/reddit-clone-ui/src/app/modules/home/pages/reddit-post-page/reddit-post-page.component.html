@@ -16,13 +16,13 @@
     </div>
     
     <div class="reddit-post-title-and-flair">
-      <p class="reddit-post-title" (click)="viewPost(redditPost)">{{ redditPost.title }}</p>
+      <p class="reddit-post-title">{{ redditPost.title }}</p>
       <p class="reddit-post-flair darken-hover" [style.backgroundColor]="redditPost.redditFlair.flairColour" matRipple>
         {{ redditPost.redditFlair.flairName }}
       </p>
     </div>
     
-    <div *ngIf="redditPost.media" class="reddit-post-media-container" (click)="viewPost(redditPost)">
+    <div *ngIf="redditPost.media" class="reddit-post-media-container">
       <div class="reddit-post-media-content">
         <img
           class="reddit-post-media-image set-media-dimensions"
@@ -44,9 +44,7 @@
       </div>
     </div>
 
-    <p *ngIf="redditPost.content" class="reddit-post-content" (click)="viewPost(redditPost)">
-      {{ redditPost.content }}
-    </p>
+    <p class="reddit-post-content">{{ redditPost.content }}</p>
     
     <div class="reddit-post-footer">
       <div class="reddit-post-footer-buttons">
@@ -74,10 +72,7 @@
           <small class="reddit-post-button-text">Save</small>
         </div>
 
-        <app-reddit-post-extra-footer-buttons 
-          class="reddit-post-save darken-hover extra-buttons" 
-          matRipple
-        ></app-reddit-post-extra-footer-buttons>
+        <app-reddit-post-extra-footer-buttons class="reddit-post-save darken-hover extra-buttons" matRipple></app-reddit-post-extra-footer-buttons>
       </div>
     </div>
   </div>

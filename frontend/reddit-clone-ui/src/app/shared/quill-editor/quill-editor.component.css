@@ -2,3 +2,7 @@ quill-editor {
   width: 100%;
   background-color: white;
 }
+
+.quill-editor-toolbar {
+  display: flex;
+}

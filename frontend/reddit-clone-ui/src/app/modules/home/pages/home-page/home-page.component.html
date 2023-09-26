@@ -1,23 +1,62 @@
 <div class="home-page-container">
   <div class="left-side">
     <div class="create-post">
-      <input class="create-post-input darken-hover" (click)="createPost('create-post')" type="text" placeholder="Create post" matRipple/>
-      <div class="create-post-icon from-computer darken-hover" (click)="createPost('create-from-computer')" matTooltip="From Computer" matRipple>
+      <input
+        matInput
+        class="create-post-input darken-hover"
+        (click)="createPost('create-post')"
+        type="text"
+        placeholder="Create post"
+        matRipple
+      />
+
+      <div
+        class="create-post-icon from-computer darken-hover"
+        (click)="createPost('create-from-computer')"
+        matTooltip="From Computer"
+        matRipple
+      >
         <mat-icon>computer</mat-icon>
       </div>
-      <div class="create-post-icon from-url darken-hover" (click)="createPost('create-from-link')" matTooltip="From URL" matRipple>
+
+      <div
+        class="create-post-icon from-url darken-hover"
+        (click)="createPost('create-from-link')"
+        matTooltip="From URL"
+        matRipple
+      >
         <mat-icon>link</mat-icon>
       </div>
     </div>
-    
+
     <div class="reddit-feed-sort">
-      <div class="sort-options">Sort Options</div>   
-    
+      <div class="sort-options">
+        <div class="best-option sort-option-button darken-hover" matRipple>
+          <mat-icon>star</mat-icon>
+          <p>Best</p>
+        </div>
+        <div class="hot-option sort-option-button darken-hover" matRipple>
+          <mat-icon>wb_sunny</mat-icon>
+          <p>Hot</p>
+        </div>
+        <div class="new-option sort-option-button darken-hover" matRipple>
+          <mat-icon>priority_high</mat-icon>
+          <p>New</p>
+        </div>
+        <div class="top-option sort-option-button darken-hover" matRipple>
+          <mat-icon>equalizer</mat-icon>
+          <p>Top</p>
+        </div>
+        <div class="rising-option sort-option-button darken-hover" matRipple>
+          <mat-icon>show_chart</mat-icon>
+          <p>Rising</p>
+        </div>
+      </div>
       <app-layout-switch-button class="layout-switch-button" matRipple></app-layout-switch-button>
     </div>
-    
+
     <div class="reddit-feed">
-      <div class="reddit-posts" *ngFor="let redditPost of redditPosts">
+      <div class="reddit-posts" *ngFor="let redditPost of redditPostService.redditPosts">
         <app-reddit-post [reddit-post]="redditPost"></app-reddit-post>
       </div>
     </div>

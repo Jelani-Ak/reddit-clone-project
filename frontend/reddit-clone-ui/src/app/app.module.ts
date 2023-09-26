@@ -8,7 +8,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './modules/home/pages/home-page/home-page.component';
@@ -28,6 +29,7 @@ import { RedditPostExtraFooterButtonsComponent } from './core/components/reddit-
 import { CreatePostPageComponent } from './modules/home/pages/create-post-page/create-post-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { QuillEditorComponent } from './shared/quill-editor/quill-editor.component';
+import { RedditPostPageComponent } from './modules/home/pages/reddit-post-page/reddit-post-page.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { QuillEditorComponent } from './shared/quill-editor/quill-editor.compone
     RedditPostExtraFooterButtonsComponent,
     CreatePostPageComponent,
     QuillEditorComponent,
+    RedditPostPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { QuillEditorComponent } from './shared/quill-editor/quill-editor.compone
     ReactiveFormsModule,
     MatSnackBarModule,
     MatInputModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -70,6 +70,7 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  background-color: orange;
   border: 1px solid orange;
   justify-content: space-between;
 }
@@ -86,4 +87,19 @@
   height: auto;
   padding: 10px;
   background-color: orange;
+}
+
+.sort-options {
+  display: flex;
+  gap: 10px;
+  background-color: inherit;
+}
+
+.sort-option-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: 150ms ease-out;
+  background-color: inherit;
 }

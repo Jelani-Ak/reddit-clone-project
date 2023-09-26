@@ -10,12 +10,12 @@ export class QuillEditorComponent {
   public blurred: boolean = false;
   public focused: boolean = false;
 
-  public focus($event: any) {
+  public focus() {
     this.focused = true;
     this.blurred = false;
   }
 
-  public blur($event: any) {
+  public blur() {
     this.focused = false;
     this.blurred = true;
   }

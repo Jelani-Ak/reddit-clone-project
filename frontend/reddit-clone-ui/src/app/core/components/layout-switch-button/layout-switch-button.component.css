@@ -1,6 +1,6 @@
 .card-layout-overlay {
   display: grid;
-  background-color: white;
+  background-color: orange;
   margin: 0;
   padding: 0;
   width: 125px;
@@ -13,7 +13,7 @@
   cursor: pointer;
   height: 100%;
   width: 125px;
-  background-color: white;
+  background-color: orange;
   transition: 150ms ease-out;
 }
 

@@ -1,5 +1,5 @@
-<quill-editor [(ngModel)]="quillText" [styles]="{ height: '200px' }" (onFocus)="focus($event)" (onBlur)="blur($event)">
-  <div quill-editor-toolbar>
+<quill-editor [(ngModel)]="quillText" [styles]="{ height: '200px' }" (onFocus)="focus()" (onBlur)="blur()">
+  <div class="quill-editor-toolbar" quill-editor-toolbar>
     <span class="ql-formats">
       <button class="ql-bold" [matTooltip]="'Bold'" matTooltipShowDelay="1000"></button>
       <button class="ql-italic" [matTooltip]="'Italic'" matTooltipShowDelay="1000"></button>

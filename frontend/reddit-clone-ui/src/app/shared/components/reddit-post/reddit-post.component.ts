@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { NavigationService } from 'app/core/services/navigation/navigation.service';
+import { RedditPostService } from 'app/core/services/reddit-post/reddit-post.service';
 import { RedditPost } from 'app/shared/models/reddit-post';
 
 @Component({
@@ -9,26 +11,27 @@ import { RedditPost } from 'app/shared/models/reddit-post';
 export class RedditPostComponent {
   @Input('reddit-post') public redditPost!: RedditPost;
 
-  public imageLoaded: boolean = false;
-  public videoLoaded: boolean = false;
+  constructor(
+    public redditPostService: RedditPostService,
+    private navigationService: NavigationService
+  ) {}
 
-  constructor() {}
-
-  public isAcceptableImage(redditPostMediaType: string | undefined) {
-    if (redditPostMediaType == 'image/png' || 'image/jpg') {
-      this.imageLoaded = true;
-      return true;
-    }
-
-    return false;
+  public isAcceptableImage(redditPostMediaType: string) {
+    const isAcceptableImage = this.redditPostService.isAcceptableImage(redditPostMediaType);
+    return isAcceptableImage;
   }
 
-  public isAcceptableVideo(redditPostMediaType: string | undefined) {
-    if (redditPostMediaType == 'video/webm') {
-      this.videoLoaded = true;
-      return true;
-    }
+  public isAcceptableVideo(redditPostMediaType: string) {
+    const isAcceptableVideo = this.redditPostService.isAcceptableVideo(redditPostMediaType);
+    return isAcceptableVideo;
+  }
 
-    return false;
+  public viewPost(RedditPost: RedditPost) {
+    const queryParams = {
+      subRedditName: RedditPost.subRedditName,
+      redditPostId: RedditPost.redditPostId,
+    };
+
+    this.navigationService.navigate('reddit-post', queryParams);
   }
 }
