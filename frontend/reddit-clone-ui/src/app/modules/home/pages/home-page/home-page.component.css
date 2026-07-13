@@ -17,10 +17,6 @@
   width: 650px;
 }
 
-.right-side {
-  width: 350px;
-}
-
 .create-post {
   display: flex;
   align-items: center;
@@ -81,12 +77,6 @@
 
 .reddit-posts {
   padding: 0 10px 10px 10px;
-}
-
-.side-panel {
-  height: auto;
-  padding: 10px;
-  background-color: orange;
 }
 
 .sort-options {

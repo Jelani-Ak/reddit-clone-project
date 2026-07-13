@@ -1,7 +1,7 @@
 <div class="create-post-page-container">
   <div class="left-side">
     <mat-tab-group #CreatePostTabs>
-      <!-- NOTE: Index one -->
+      <!-- NOTE: Index one [Post] -->
       <mat-tab label="Post">
         <form class="create-post-options" [formGroup]="createPostForm" (ngSubmit)="submitPost()">
           <mat-form-field appearance="fill" class="user-management-form">
@@ -16,7 +16,7 @@
         </form>
       </mat-tab>
 
-      <!-- NOTE: Index two -->
+      <!-- NOTE: Index two [Image & Video] -->
       <mat-tab label="Image & Video">
         <form class="create-post-options" [formGroup]="createPostForm" (ngSubmit)="submitPost()">
           <mat-form-field appearance="fill" class="user-management-form">
@@ -29,7 +29,7 @@
         </form>
       </mat-tab>
 
-      <!-- NOTE: Index three -->
+      <!-- NOTE: Index three [Link] -->
       <mat-tab label="Link">
         <form class="create-post-options" [formGroup]="createPostForm" (ngSubmit)="submitPost()">
           <mat-form-field appearance="fill" class="user-management-form">
@@ -50,7 +50,7 @@
         </form>
       </mat-tab>
 
-      <!-- NOTE: Index four -->
+      <!-- NOTE: Index four [Poll] -->
       <mat-tab label="Poll">
         <form class="create-post-options" [formGroup]="createPostForm" (ngSubmit)="submitPost()">
           <mat-form-field appearance="fill" class="user-management-form">
@@ -72,9 +72,10 @@
     </mat-chip-listbox>
   </div>
 
+  <!-- TODO: Turn this into a reusable component? -->
   <div class="right-side">
     <div class="side-panel">
-      <div>side-panel works!</div>
+      <app-subreddit-side-panel></app-subreddit-side-panel>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RedditCloneProjectApplication {
 
 	public static void main(String[] args) {
-		System.setProperty("server.servlet.context-path", "/reddit-clone");
+//		System.setProperty("server.servlet.context-path", "/reddit-clone");
 		SpringApplication.run(RedditCloneProjectApplication.class, args);
 	}
 }

@@ -30,6 +30,7 @@ import { CreatePostPageComponent } from './modules/home/pages/create-post-page/c
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { QuillEditorComponent } from './shared/quill-editor/quill-editor.component';
 import { RedditPostPageComponent } from './modules/home/pages/reddit-post-page/reddit-post-page.component';
+import { SubredditSidePanelComponent } from './shared/components/subreddit-side-panel/subreddit-side-panel.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RedditPostPageComponent } from './modules/home/pages/reddit-post-page/r
     CreatePostPageComponent,
     QuillEditorComponent,
     RedditPostPageComponent,
+    SubredditSidePanelComponent,
   ],
   imports: [
     BrowserModule,
